@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
+        android:id="@+id/MinutesTag"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/phoneNumberTag"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="Minutes between each nag:"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/MinutesInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_above="@+id/button"
+        android:layout_below="@id/phoneNumberInput"
+        android:layout_toEndOf="@+id/phoneNumberTag"
+        android:ems="10"
+        android:inputType="number"
+        android:text="" />
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/phoneNumberTag"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="113dp"
+        android:layout_marginLeft="32dp"
+        android:text="Phone Number:"
+        android:layout_below="@id/messageTag"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/messageInput"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/messageTag"
+        android:layout_toEndOf="@+id/phoneNumberTag"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="" />
+
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MinutesTag"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+            android:text="Start" />
+
+    <TextView
+        android:id="@+id/messageTag"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="32dp"
+        android:text="Message:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/phoneNumberInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/phoneNumberTag"
+        android:layout_toEndOf="@+id/phoneNumberTag"
+        android:ems="10"
+        android:inputType="phone" />
+
+   
+
+</RelativeLayout>
+
+
