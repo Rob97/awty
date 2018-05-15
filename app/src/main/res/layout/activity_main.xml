@@ -20,7 +20,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
-        android:id="@+id/MinutesInput"
+        android:id="@+id/minuteInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button"
@@ -82,7 +82,7 @@
         android:ems="10"
         android:inputType="phone" />
 
-   
+
 
 </RelativeLayout>
 
