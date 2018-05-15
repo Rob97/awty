@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                     val toastMessage = "${phoneFormat(phoneNumberInput.text.toString())}: ${messageInput.text.toString()}"
 
                     intent.putExtra("messageInput", toastMessage)
+                    intent.putExtra("message", messageInput.text.toString())
+                    intent.putExtra("phoneNumber", phoneNumberInput.text)
 
                     val pendingUpdate = PendingIntent.getBroadcast(this, 0,
                             intent, PendingIntent.FLAG_UPDATE_CURRENT)
