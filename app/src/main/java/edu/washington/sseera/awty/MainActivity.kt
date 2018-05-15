@@ -9,6 +9,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.SystemClock
 import android.util.Log
 
 class MainActivity : AppCompatActivity() {
@@ -60,7 +61,8 @@ class MainActivity : AppCompatActivity() {
             if (validateEntries()) {
                 if(button.text == "Start") {
 
-                    val toastMessage = "${phoneFormat(phoneNumberInput.text.toString())}: $messageInput"
+                    val toastMessage = "${phoneFormat(phoneNumberInput.text.toString())}: ${messageInput.text.toString()}"
+
                     intent.putExtra("messageInput", toastMessage)
 
                     val pendingUpdate = PendingIntent.getBroadcast(this, 0,
@@ -70,8 +72,8 @@ class MainActivity : AppCompatActivity() {
 
                     Log.i("MAINACTIVTY", "Sending Intent")
 
-                    alarmMan.setRepeating(AlarmManager.RTC_WAKEUP,
-                            5000, minIntervalLong, pendingUpdate)
+                    alarmMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + minIntervalLong,
+                            minIntervalLong, pendingUpdate)
 
                     button.text = "Stop"
 
