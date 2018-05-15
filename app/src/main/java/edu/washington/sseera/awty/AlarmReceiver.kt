@@ -25,8 +25,11 @@ class AlarmReceiver : BroadcastReceiver() {
                 Toast.makeText(context, messageDisplayed, Toast.LENGTH_LONG).show()
 
         try {
-            SmsManager.getDefault().sendTextMessage(testingNumber1.toString(), null, message, null, null);
-            SmsManager.getDefault().sendTextMessage(testingNumber2.toString(), null, message, null, null);
+            SmsManager.getDefault().sendTextMessage(phoneNumber, null, message, null, null);
+            //Testing with emulator
+            //SmsManager.getDefault().sendTextMessage("15555215554", null, message, null, null);
+
+
         } catch (e:Exception) {
           Log.e("AlarmReviever", "SMS IS NOT WORKING")
         }
